@@ -1,4 +1,3 @@
-using CharacterGen.DependencyResolver;
 using SimpleInjector.Integration.WebApi;
 using System;
 using System.Collections.Generic;
@@ -17,8 +16,11 @@ namespace CharacterGen.Api
     {
         protected void Application_Start()
         {
-            var container = Bootstrapper.GetContainer();
+            var container = DependencyResolverConfig.GetContainer();
             GlobalConfiguration.Configuration.DependencyResolver = new SimpleInjectorWebApiDependencyResolver(container);
+
+            AutoMapperConfig.RegisterMappings();
+
             GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings = 
                 new JsonSerializerSettings() { Converters = new List<JsonConverter> { new ObjectIdConverter() } };
             
