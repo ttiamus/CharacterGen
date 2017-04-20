@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>29b1bfe5-a3f0-4066-adc0-d6c032cba788</ProjectGuid>
+    <ProjectGuid>{29B1BFE5-A3F0-4066-ADC0-D6C032CBA788}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CharacterGen.Business</RootNamespace>
@@ -30,24 +30,42 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="MongoDB.Bson, Version=2.4.3.23, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.4.3\lib\net45\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Languages\Commands\CreateLanguageCommand\CreateLanguageCommand.cs" />
+    <Compile Include="Languages\Commands\CreateLanguageCommand\CreateLanguageRequest.cs" />
+    <Compile Include="Languages\Commands\CreateLanguageCommand\CreateLanguageValidator.cs" />
+    <Compile Include="Languages\Commands\UpdateLanguageCommand\UpdateLanguageCommand.cs" />
+    <Compile Include="Languages\Commands\UpdateLanguageCommand\UpdateLanguageRequest.cs" />
+    <Compile Include="Languages\Commands\UpdateLanguageCommand\UpdateLanguageValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Languages\Queries\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CharacterGen.Common\CharacterGen.Common.csproj">
+      <Project>{39d33ed4-53a5-49f3-9594-25144bca183c}</Project>
+      <Name>CharacterGen.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CharacterGen.Domain\CharacterGen.Domain.csproj">
+      <Project>{de73b894-9163-4b4a-990c-b383cdaeddd0}</Project>
+      <Name>CharacterGen.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>
