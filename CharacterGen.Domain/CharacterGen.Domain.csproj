@@ -45,7 +45,10 @@
   <ItemGroup>
     <Compile Include="AbilityScore\AbilityScores.cs" />
     <Compile Include="AbilityScore\IAbilityScores.cs" />
+    <Compile Include="Enums\Action.cs" />
     <Compile Include="Enums\Size.cs" />
+    <Compile Include="Enums\SpellComponent.cs" />
+    <Compile Include="Enums\SpellSchool.cs" />
     <Compile Include="Equipment\AdventuringGear\AdventuringGear.cs" />
     <Compile Include="Equipment\AdventuringGear\IAdventuringGear.cs" />
     <Compile Include="Enums\Alignment.cs" />
