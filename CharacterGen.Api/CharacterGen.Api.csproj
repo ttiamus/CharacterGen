@@ -196,6 +196,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -233,8 +234,12 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Configs\Mongo.example.config" />
-    <Content Include="Configs\Mongo.config" />
+    <Content Include="Configs\Mongo.example.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Configs\Mongo.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -275,9 +280,25 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CharacterGen.Business\CharacterGen.Business.csproj">
+      <Project>{29B1BFE5-A3F0-4066-ADC0-D6C032CBA788}</Project>
+      <Name>CharacterGen.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CharacterGen.Common\CharacterGen.Common.csproj">
       <Project>{39d33ed4-53a5-49f3-9594-25144bca183c}</Project>
       <Name>CharacterGen.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CharacterGen.Dal\CharacterGen.Dal.csproj">
+      <Project>{2672366C-F7E5-4427-AFC2-4FF21630D6BD}</Project>
+      <Name>CharacterGen.Dal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CharacterGen.Domain\CharacterGen.Domain.csproj">
+      <Project>{DE73B894-9163-4B4A-990C-B383CDAEDDD0}</Project>
+      <Name>CharacterGen.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CharacterGen.Mongo\CharacterGen.Mongo.csproj">
+      <Project>{59F46FBB-E818-4FE0-A8E1-F7D44735775B}</Project>
+      <Name>CharacterGen.Mongo</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

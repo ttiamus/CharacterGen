@@ -46,14 +46,17 @@
     <Compile Include="Languages\Commands\CreateLanguageCommand\CreateLanguageCommand.cs" />
     <Compile Include="Languages\Commands\CreateLanguageCommand\CreateLanguageRequest.cs" />
     <Compile Include="Languages\Commands\CreateLanguageCommand\CreateLanguageValidator.cs" />
+    <Compile Include="Languages\Commands\DeleteLanguageCommand\DeleteLanguageValidator.cs" />
+    <Compile Include="Languages\Commands\DeleteLanguageCommand\DeleteLanguageCommand.cs" />
+    <Compile Include="Languages\Commands\DeleteLanguageCommand\DeleteLanguageRequest.cs" />
     <Compile Include="Languages\Commands\UpdateLanguageCommand\UpdateLanguageCommand.cs" />
     <Compile Include="Languages\Commands\UpdateLanguageCommand\UpdateLanguageRequest.cs" />
     <Compile Include="Languages\Commands\UpdateLanguageCommand\UpdateLanguageValidator.cs" />
+    <Compile Include="Languages\Queries\GetLanguageByIdQuery\GetLanguageByIdRequest.cs" />
+    <Compile Include="Languages\Queries\GetLanguagesQuery\GetLanguagesRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Languages\Queries\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

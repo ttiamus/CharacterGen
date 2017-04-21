@@ -11,7 +11,7 @@ namespace CharacterGen.Mongo
         public MongoContext()
         {
             this.client = new MongoClient(new MongoConfiguration().ConnectionString);
-            this.database = client.GetDatabase("characterGen");
+            this.database = client.GetDatabase("character_gen");
         }
 
         public IMongoCollection<TEntity> Collection<TEntity>() where TEntity : class

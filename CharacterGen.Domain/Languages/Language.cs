@@ -2,7 +2,7 @@
 
 namespace CharacterGen.Domain.Languages
 {
-    public class Language : ILanguage
+    public class Language : ILanguage, IAggregateRoot
     {
         public ObjectId Id { get; set; }
         public string Name { get; set; }

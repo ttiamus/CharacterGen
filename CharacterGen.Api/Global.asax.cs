@@ -9,6 +9,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using CharacterGen.Common.Json;
 using Newtonsoft.Json;
+using SimpleInjector;
 
 namespace CharacterGen.Api
 {
@@ -16,12 +17,16 @@ namespace CharacterGen.Api
     {
         protected void Application_Start()
         {
+            var config = GlobalConfiguration.Configuration;
+
             var container = DependencyResolverConfig.GetContainer();
-            GlobalConfiguration.Configuration.DependencyResolver = new SimpleInjectorWebApiDependencyResolver(container);
+            container.RegisterWebApiControllers(config);
+            container.Verify();     //Check that everything is registered correctly
+            config.DependencyResolver = new SimpleInjectorWebApiDependencyResolver(container);
 
             AutoMapperConfig.RegisterMappings();
 
-            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings = 
+            config.Formatters.JsonFormatter.SerializerSettings = 
                 new JsonSerializerSettings() { Converters = new List<JsonConverter> { new ObjectIdConverter() } };
             
             AreaRegistration.RegisterAllAreas();

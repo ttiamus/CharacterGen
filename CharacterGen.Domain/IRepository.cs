@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
+using MongoDB.Bson;
 
 namespace CharacterGen.Domain
 {
     public interface IRepository<T>
     {
-        T Find(params object[] id);
-        IQueryable<T> Where(Expression<Func<bool, T>> predicate);
+        T Find(ObjectId id);
+        IQueryable<T> Where(Expression<Func<T, bool>> predicate);
         void Add(T entity);
         void Update(T entity);
-        void Delete(T entity);
+        void Delete(ObjectId id);
     }
 }
