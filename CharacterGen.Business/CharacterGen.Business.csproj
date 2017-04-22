@@ -33,6 +33,9 @@
     <Reference Include="MongoDB.Bson, Version=2.4.3.23, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MongoDB.Bson.2.4.3\lib\net45\MongoDB.Bson.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,7 +55,10 @@
     <Compile Include="Languages\Commands\UpdateLanguageCommand\UpdateLanguageCommand.cs" />
     <Compile Include="Languages\Commands\UpdateLanguageCommand\UpdateLanguageRequest.cs" />
     <Compile Include="Languages\Commands\UpdateLanguageCommand\UpdateLanguageValidator.cs" />
+    <Compile Include="Languages\Queries\GetLanguageByIdQuery\GetLanguageByIdCommand.cs" />
     <Compile Include="Languages\Queries\GetLanguageByIdQuery\GetLanguageByIdRequest.cs" />
+    <Compile Include="Languages\Queries\GetLanguageByIdQuery\GetLanguageByIdValidator.cs" />
+    <Compile Include="Languages\Queries\GetLanguagesQuery\GetLanguagesCommand.cs" />
     <Compile Include="Languages\Queries\GetLanguagesQuery\GetLanguagesRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

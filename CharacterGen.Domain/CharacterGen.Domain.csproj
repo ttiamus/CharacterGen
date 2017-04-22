@@ -68,7 +68,6 @@
     <Compile Include="Feat\Feat.cs" />
     <Compile Include="Feat\IFeat.cs" />
     <Compile Include="Enums\HitDie.cs" />
-    <Compile Include="IAggregateRoot.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Spell\ISpell.cs" />
     <Compile Include="Languages\ILanguage.cs" />

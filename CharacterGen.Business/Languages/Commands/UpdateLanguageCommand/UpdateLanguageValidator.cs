@@ -5,28 +5,31 @@ namespace CharacterGen.Business.Languages.Commands.UpdateLanguageCommand
 {
     public class UpdateLanguageValidator
     {
-        public bool IsLanguageValid(UpdateLanguageRequest request)
+        public bool IsRequestValid(UpdateLanguageRequest request)
         {
-            var result = true;
-            if (string.IsNullOrWhiteSpace(request.Name))
-            {
-                //log issue
-                result = false;
-            }  
+            var idValid = IsIdValid(request.Id);
+            var nameValid = IsNameValid(request.Name);
+            var descriptionValid = IsDescriptionValid(request.Description);
+            
+            return idValid && nameValid && descriptionValid;
+        }
 
-            if (string.IsNullOrWhiteSpace(request.Description))
-            {
-                //Log issue
-                result = false;
-            }
+        private bool IsIdValid(string id)
+        {
+            //Log any validation issues
+            return !string.IsNullOrWhiteSpace(id);
+        }
 
-            if (request.Id.Equals(null) || request.Id.Equals(ObjectId.Empty))
-            {
-                //log issue
-                result = false;
-            }
+        private bool IsNameValid(string name)
+        {
+            //Log any validation issues
+            return !string.IsNullOrWhiteSpace(name);
+        }
 
-            return result;
+        private bool IsDescriptionValid(string description)
+        {
+            //Log any validation issues
+            return !string.IsNullOrWhiteSpace(description);
         }
     }
 }

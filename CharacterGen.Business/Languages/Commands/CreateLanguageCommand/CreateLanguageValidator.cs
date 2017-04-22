@@ -2,22 +2,24 @@
 {
     public class CreateLanguageValidator
     {
-        public bool IsLanguageValid(CreateLanguageRequest request)
+        public bool IsRequestValid(CreateLanguageRequest request)
         {
-            var result = true;
-            if (string.IsNullOrWhiteSpace(request.Name))
-            {
-                //log issue
-                result = false;
-            }
+            var nameValid = IsNameValid(request.Name);
+            var descriptionValid = IsDescriptionValid(request.Description);
 
-            if (string.IsNullOrWhiteSpace(request.Description))
-            {
-                //Log issue
-                result = false;
-            }
+            return nameValid && descriptionValid;
+        }
 
-            return result;
+        private bool IsNameValid(string name)
+        {
+            //Log any validation issues
+            return !string.IsNullOrWhiteSpace(name);
+        }
+
+        private bool IsDescriptionValid(string description)
+        {
+            //Log any validation issues
+            return !string.IsNullOrWhiteSpace(description);
         }
     }
 }

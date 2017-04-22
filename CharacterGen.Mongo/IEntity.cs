@@ -3,8 +3,8 @@
 namespace CharacterGen.Domain
 {
     //This is needed so the generic repository can access the Id property of the Generic roots
-    public interface IAggregateRoot
+    public interface IEntity
     {
-        ObjectId Id { get; }
+        string Id { get; }
     }
 }

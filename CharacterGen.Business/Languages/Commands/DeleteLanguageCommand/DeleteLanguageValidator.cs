@@ -4,9 +4,15 @@ namespace CharacterGen.Business.Languages.Commands.DeleteLanguageCommand
 {
     public class DeleteLanguageValidator
     {
-        public bool IsValidDeleteLanguageRequest(DeleteLanguageRequest request)
+        public bool IsRequestValid(DeleteLanguageRequest request)
         {
-            return !request.Id.Equals(null) && !request.Id.Equals(ObjectId.Empty);
+            return IsIdValid(request.Id);
+        }
+
+        private bool IsIdValid(string id)
+        {
+            //Log any validation issues
+            return !string.IsNullOrWhiteSpace(id);
         }
     }
 }

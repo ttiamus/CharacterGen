@@ -3,67 +3,74 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Runtime.InteropServices;
+using System.Runtime.Serialization;
 using System.Web.Http;
 using CharacterGen.Business.Languages.Commands.CreateLanguageCommand;
 using CharacterGen.Business.Languages.Commands.DeleteLanguageCommand;
 using CharacterGen.Business.Languages.Commands.UpdateLanguageCommand;
 using CharacterGen.Business.Languages.Queries.GetLanguageByIdQuery;
+using CharacterGen.Business.Languages.Queries.GetLanguagesQuery;
 using CharacterGen.Domain.Languages;
+using MongoDB.Bson;
 
 namespace CharacterGen.Api.Controllers
 {
     public class LanguageController : ApiController
     {
+        private readonly GetLanguagesCommand getLanguagesCommand;
+        private readonly GetLanguageByIdCommand getLanguageByIdCommand;
         private readonly CreateLanguageCommand createLanguageCommand;
         private readonly UpdateLanguageCommand updateLanguageCommand;
         private readonly DeleteLanguageCommand deleteLanguageCommand;
 
         public LanguageController(
+            GetLanguagesCommand getLanguagesCommand,
+            GetLanguageByIdCommand getLanguageByIdCommand,
             CreateLanguageCommand createLanguageCommand,
             UpdateLanguageCommand updateLanguageCommand,
             DeleteLanguageCommand deleteLanguageCommand)
         {
+            this.getLanguagesCommand = getLanguagesCommand;
+            this.getLanguageByIdCommand = getLanguageByIdCommand;
             this.createLanguageCommand = createLanguageCommand;
             this.updateLanguageCommand = updateLanguageCommand;
             this.deleteLanguageCommand = deleteLanguageCommand;
         }
 
-        // GET: api/Language
         [HttpGet]
         [Route("language")]
-        public IEnumerable<Language> Get()
+        public IEnumerable<Language> Get(GetLanguagesRequest request)
         {
-            return new List<Language>();
+            return getLanguagesCommand.Execute(request);
         }
 
-        // GET: api/Language/5
         [HttpGet]
         [Route("language/{id}")]
-        public Language Get(GetLanguageByIdRequest request)
+        public Language Get([FromUri] GetLanguageByIdRequest request)
         {
-            return new Language();
+            //var request = new GetLanguageByIdRequest() { Id = id };
+            return getLanguageByIdCommand.Execute(request);
         }
 
-        // POST: api/Language
+        //TODO: Find a way to make ObjectId bind within request body
         [HttpPost]
-        [Route("language")]
+        [Route("language/create")]
         public void Post(CreateLanguageRequest request)
         {
             createLanguageCommand.Execute(request);
         }
 
-        // PUT: api/Language/5
         [HttpPut]
-        [Route("language")]
-        public void Put(UpdateLanguageRequest request)
+        [Route("language/update")]
+        public void Put([FromBody] UpdateLanguageRequest request)
         {
             updateLanguageCommand.Execute(request);
         }
 
-        // DELETE: api/Language/5
         [HttpDelete]
-        [Route("language")]
-        public void Delete(DeleteLanguageRequest request)
+        [Route("language/delete")]
+        public void Delete([FromBody] DeleteLanguageRequest request)
         {
             deleteLanguageCommand.Execute(request);
         }

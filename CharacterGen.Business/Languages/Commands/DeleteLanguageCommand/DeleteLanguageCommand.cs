@@ -16,7 +16,7 @@ namespace CharacterGen.Business.Languages.Commands.DeleteLanguageCommand
 
         public void Execute(DeleteLanguageRequest request)
         {
-            if (validator.IsValidDeleteLanguageRequest(request))
+            if (validator.IsRequestValid(request))
             {
                 languageRepository.Delete(request.Id);
             }

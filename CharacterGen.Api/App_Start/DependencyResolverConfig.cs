@@ -17,11 +17,12 @@ namespace CharacterGen.Api
             container.Options.DefaultScopedLifestyle = new AsyncScopedLifestyle();
             
             container.Register<IHttpHelper, HttpHelper>(Lifestyle.Scoped);
-            container.Register(typeof(IRepository<>), typeof(Repository<>), Lifestyle.Scoped);
+            //container.RegisterConditional(typeof(IRepository<>), typeof(Repository<>), c => !c.Handled);
 
             container.Register<MongoContext>(Lifestyle.Scoped);
 
             container.Register<ILanguage, Language>(Lifestyle.Scoped);
+            container.Register<IRepository<Language>, LanguageRepository>(Lifestyle.Scoped);
             
             return container;
         }

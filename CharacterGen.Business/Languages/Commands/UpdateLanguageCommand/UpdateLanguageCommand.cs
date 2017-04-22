@@ -16,7 +16,7 @@ namespace CharacterGen.Business.Languages.Commands.UpdateLanguageCommand
 
         public void Execute(UpdateLanguageRequest request)
         {
-            if (validator.IsLanguageValid(request))
+            if (validator.IsRequestValid(request))
             {
                 var language = languageRepository.Find(request.Id);
                 language.UpdateName(request.Name);

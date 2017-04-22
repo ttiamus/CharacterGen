@@ -16,7 +16,7 @@ namespace CharacterGen.Business.Languages.Commands.CreateLanguageCommand
 
         public void Execute(CreateLanguageRequest request)
         {
-            if (validator.IsLanguageValid(request))
+            if (validator.IsRequestValid(request))
             {
                 var language = new Language();  //TODO: Change to a factory
                 language.UpdateName(request.Name);

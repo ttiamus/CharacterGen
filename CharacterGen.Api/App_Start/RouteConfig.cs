@@ -22,16 +22,7 @@ namespace CharacterGen.Api
                 constraints: null,
                 handler: new RedirectHandler((message => message.RequestUri.ToString()), "swagger")
             );
-            
-            /*
-            routes.MapRoute(
-                name: "ASP Help Default",
-                url: "",
-                defaults: new { controller = "Help", action = "Index" })
-                    .DataTokens = new RouteValueDictionary(new { area = "HelpPage" }
-            );
-            */
-
+           
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}"

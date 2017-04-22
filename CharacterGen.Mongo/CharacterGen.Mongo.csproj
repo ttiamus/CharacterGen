@@ -53,6 +53,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IEntity.cs" />
+    <Compile Include="Models\LanguageEntity.cs" />
     <Compile Include="MongoConfiguration.cs" />
     <Compile Include="MongoContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,8 +62,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

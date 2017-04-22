@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using CharacterGen.Common.Json;
+using MongoDB.Bson;
 using Newtonsoft.Json;
 using SimpleInjector;
 
@@ -26,9 +27,9 @@ namespace CharacterGen.Api
 
             AutoMapperConfig.RegisterMappings();
 
-            config.Formatters.JsonFormatter.SerializerSettings = 
-                new JsonSerializerSettings() { Converters = new List<JsonConverter> { new ObjectIdConverter() } };
-            
+            //config.Formatters.JsonFormatter.SerializerSettings =
+            //    new JsonSerializerSettings() { Converters = new List<JsonConverter> { new ObjectIdConverter() } };
+
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
