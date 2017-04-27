@@ -1,5 +1,4 @@
-﻿using CharacterGen.Domain;
-using MongoDB.Bson;
+﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace CharacterGen.Mongo.Models

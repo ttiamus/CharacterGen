@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using CharacterGen.Domain.Enums;
+using CharacterGen.Domain.Enumerations;
 
 namespace CharacterGen.Domain.Spell
 {

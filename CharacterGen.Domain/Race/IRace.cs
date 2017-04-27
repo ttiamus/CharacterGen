@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using CharacterGen.Domain.AbilityScore;
-using CharacterGen.Domain.Enums;
+using CharacterGen.Domain.Enumerations;
 using CharacterGen.Domain.Languages;
 
 namespace CharacterGen.Domain.Race
@@ -13,7 +13,7 @@ namespace CharacterGen.Domain.Race
         void UpdateSubraceDescription(string subraceDescription);
         void UpdateAbilityScoreIncreases(AbilityScores abilityScores);
         void UpdateAverageAge(int averageAge);
-        void UpdateSuggestedAlignment(int intAlignment);
+        void UpdateSuggestedAlignment(string alignmentValue);
         void UpdateSuggestedAlignment(Alignment alignment);
         void UpdateSpeed(int speed);
         void UpdateLanguages(IEnumerable<Language> languages);

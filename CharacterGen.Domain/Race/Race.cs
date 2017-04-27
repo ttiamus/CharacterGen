@@ -2,8 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using CharacterGen.Domain.AbilityScore;
-using CharacterGen.Domain.Enums;
+using CharacterGen.Domain.Enumerations;
 using CharacterGen.Domain.Languages;
+using Headspring;
 using MongoDB.Bson;
 
 namespace CharacterGen.Domain.Race
@@ -50,16 +51,15 @@ namespace CharacterGen.Domain.Race
             this.AverageAge = averageAge;
         }
 
-        public void UpdateSuggestedAlignment(int intAlignment)
+        public void UpdateSuggestedAlignment(string alignmentValue)
         {
-            Alignment alignment;
-            if (Enum.TryParse(intAlignment.ToString(), out alignment))
+            if (Alignment.TryParse(alignmentValue, out Alignment suggestedAlignment))
             {
-                this.SuggestedAlignment = alignment;
+                this.SuggestedAlignment = suggestedAlignment;
             }
             else
             {
-                //TODO: Log error trying to parse alignment
+                //TODO: Log if parsing failed
             }
         }
 

@@ -4,7 +4,7 @@ using CharacterGen.Domain.Background;
 using CharacterGen.Domain.Class;
 using CharacterGen.Domain.Currencies;
 using CharacterGen.Domain.Demographic;
-using CharacterGen.Domain.Enums;
+using CharacterGen.Domain.Enumerations;
 using CharacterGen.Domain.Equipment.AdventuringGear;
 using CharacterGen.Domain.Equipment.Armor;
 using CharacterGen.Domain.Equipment.Tool;
@@ -34,7 +34,7 @@ namespace CharacterGen.Domain.Character
         public int Inititive { get; set; }
         public int ArmorClass { get; set; }
         public int HitPoints { get; set; }
-        public IEnumerable<HitDie> HitDice { get; set; } //could be multiple
+        public IEnumerable<Dice> HitDice { get; set; } //could be multiple
         public int MovementSpeed { get; set; }
 
         public int PassivePerception { get; set; }

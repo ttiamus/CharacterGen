@@ -45,13 +45,13 @@
   <ItemGroup>
     <Compile Include="AbilityScore\AbilityScores.cs" />
     <Compile Include="AbilityScore\IAbilityScores.cs" />
-    <Compile Include="Enums\Action.cs" />
-    <Compile Include="Enums\Size.cs" />
-    <Compile Include="Enums\SpellComponent.cs" />
-    <Compile Include="Enums\SpellSchool.cs" />
+    <Compile Include="Enumerations\Action.cs" />
+    <Compile Include="Enumerations\Size.cs" />
+    <Compile Include="Enumerations\SpellComponent.cs" />
+    <Compile Include="Enumerations\SpellSchool.cs" />
     <Compile Include="Equipment\AdventuringGear\AdventuringGear.cs" />
     <Compile Include="Equipment\AdventuringGear\IAdventuringGear.cs" />
-    <Compile Include="Enums\Alignment.cs" />
+    <Compile Include="Enumerations\Alignment.cs" />
     <Compile Include="Equipment\Armor\Armor.cs" />
     <Compile Include="Equipment\Armor\IArmor.cs" />
     <Compile Include="Background\Background.cs" />
@@ -64,10 +64,10 @@
     <Compile Include="Currencies\ICurrency.cs" />
     <Compile Include="Demographic\Demographic.cs" />
     <Compile Include="Demographic\IDemographic.cs" />
-    <Compile Include="Enums\Dice.cs" />
+    <Compile Include="Enumerations\Dice.cs" />
     <Compile Include="Feat\Feat.cs" />
     <Compile Include="Feat\IFeat.cs" />
-    <Compile Include="Enums\HitDie.cs" />
+    <Compile Include="Headspring\Enumeration.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Spell\ISpell.cs" />
     <Compile Include="Languages\ILanguage.cs" />
@@ -92,6 +92,8 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Headspring\LICENSE.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
