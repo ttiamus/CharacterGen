@@ -1,17 +1,17 @@
-﻿using System.Linq.Expressions;
+﻿using System;
+using CharacterGen.Mongo;
 using MongoDB.Driver;
-using MongoDB.Driver.Core.Configuration;
 
-namespace CharacterGen.Mongo
+namespace CharacterGen.Business.Tests
 {
-    public class MongoContext : IMongoContext
+    public class MongoContextTestHelper : IMongoContext
     {
         private readonly MongoClient client;
         private readonly IMongoDatabase database;
-        public MongoContext()
+        public MongoContextTestHelper()
         {
             this.client = new MongoClient(new MongoConfiguration().ConnectionString);
-            this.database = client.GetDatabase("character_gen");
+            this.database = client.GetDatabase("character_gen_tests");
         }
 
         public IMongoCollection<TEntity> Collection<TEntity>() where TEntity : class

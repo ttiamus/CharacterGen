@@ -14,6 +14,6 @@ namespace CharacterGen.Dal.Repositories
 {
     public class LanguageRepository : Repository<Language, LanguageEntity>
     {
-        public LanguageRepository(MongoContext context) : base(context) { }
+        public LanguageRepository(IMongoContext context) : base(context) { }
     }
 }

@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IEntity.cs" />
+    <Compile Include="IMongoContext.cs" />
     <Compile Include="Models\LanguageEntity.cs" />
     <Compile Include="MongoConfiguration.cs" />
     <Compile Include="MongoContext.cs" />

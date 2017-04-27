@@ -13,13 +13,6 @@ namespace CharacterGen.Api
         {
             // Web API configuration and services
 
-            //config.Services.Insert(typeof(System.Web.Http.ModelBinding.ModelBinderProvider), 
-            //      0, // Insert at front to ensure other catch-all binders don’t claim it first
-            //      new BsonObjectModelSerializationProvider()); 
-
-
-            config.BindParameter(typeof(ObjectId), new ObjectIdBinder());
-
             // Web API routes
             config.MapHttpAttributeRoutes();
 

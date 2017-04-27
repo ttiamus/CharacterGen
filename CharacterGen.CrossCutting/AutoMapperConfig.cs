@@ -2,7 +2,7 @@
 using CharacterGen.Domain.Languages;
 using CharacterGen.Mongo.Models;
 
-namespace CharacterGen.Api
+namespace CharacterGen.CrossCutting
 {
     public static class AutoMapperConfig
     {

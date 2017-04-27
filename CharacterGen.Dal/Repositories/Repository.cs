@@ -17,7 +17,7 @@ namespace CharacterGen.Dal.Repositories
     {
         private IMongoCollection<Entity> collection;
 
-        protected Repository(MongoContext context)
+        protected Repository(IMongoContext context)
         {
             this.collection = context.Collection<Entity>();
         }
@@ -30,10 +30,9 @@ namespace CharacterGen.Dal.Repositories
 
         public IQueryable<Domain> GetAll()
         {
-            IQueryable<Entity> test = collection.AsQueryable();
-            var test2 = test.ProjectTo<Domain>();
-            //var test2 = Mapper.Map<IQueryable<Domain>>(test);
-            return test2;
+            return collection               //Return the collection
+                    .AsQueryable()          //As a queryable
+                    .ProjectTo<Domain>();   //Map entities in collection to the domain object
         }
 
         public IQueryable<Domain> Where(Expression<Func<Domain, bool>> predicate)

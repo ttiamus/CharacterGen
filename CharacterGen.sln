@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterGen.Business.Tests
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterGen.Business", "CharacterGen.Business\CharacterGen.Business.csproj", "{29B1BFE5-A3F0-4066-ADC0-D6C032CBA788}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterGen.CrossCutting", "CharacterGen.CrossCutting\CharacterGen.CrossCutting.csproj", "{8E13168E-9FCD-49E1-B7D1-B9D36D956DBF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{29B1BFE5-A3F0-4066-ADC0-D6C032CBA788}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29B1BFE5-A3F0-4066-ADC0-D6C032CBA788}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29B1BFE5-A3F0-4066-ADC0-D6C032CBA788}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E13168E-9FCD-49E1-B7D1-B9D36D956DBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E13168E-9FCD-49E1-B7D1-B9D36D956DBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E13168E-9FCD-49E1-B7D1-B9D36D956DBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E13168E-9FCD-49E1-B7D1-B9D36D956DBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

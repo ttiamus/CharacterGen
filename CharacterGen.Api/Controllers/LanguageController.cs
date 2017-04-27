@@ -49,7 +49,7 @@ namespace CharacterGen.Api.Controllers
         [Route("language/{id}")]
         public Language Get([FromUri] GetLanguageByIdRequest request)
         {
-            //var request = new GetLanguageByIdRequest() { Id = id };
+            //TODO: Handle not found
             return getLanguageByIdCommand.Execute(request);
         }
 

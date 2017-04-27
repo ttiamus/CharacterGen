@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CharacterGen.Services")]
+[assembly: AssemblyTitle("CharacterGen.CrossCutting")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CharacterGen.Services")]
+[assembly: AssemblyProduct("CharacterGen.CrossCutting")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("26f4fe24-a50e-44d7-aa8e-04486290cb97")]
+[assembly: Guid("8e13168e-9fcd-49e1-b7d1-b9d36d956dbf")]
 
 // Version information for an assembly consists of the following four values:
 //

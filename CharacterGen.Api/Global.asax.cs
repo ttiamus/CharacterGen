@@ -7,10 +7,9 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using CharacterGen.Common.Json;
-using MongoDB.Bson;
-using Newtonsoft.Json;
+using CharacterGen.CrossCutting;
 using SimpleInjector;
+
 
 namespace CharacterGen.Api
 {

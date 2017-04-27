@@ -1,4 +1,5 @@
-﻿using CharacterGen.Domain;
+﻿using System;
+using CharacterGen.Domain;
 using CharacterGen.Domain.Languages;
 
 namespace CharacterGen.Business.Languages.Commands.CreateLanguageCommand
@@ -27,6 +28,7 @@ namespace CharacterGen.Business.Languages.Commands.CreateLanguageCommand
             else
             {
                 //Log problem
+                throw new NotImplementedException();
             }
         }
     }

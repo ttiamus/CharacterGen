@@ -1,4 +1,4 @@
-﻿using System.CodeDom;
+﻿
 using CharacterGen.Common.Http;
 using CharacterGen.Dal.Repositories;
 using CharacterGen.Domain;
@@ -7,7 +7,7 @@ using CharacterGen.Mongo;
 using SimpleInjector;
 using SimpleInjector.Lifestyles;
 
-namespace CharacterGen.Api
+namespace CharacterGen.CrossCutting
 {
     public static class DependencyResolverConfig
     {
@@ -19,7 +19,7 @@ namespace CharacterGen.Api
             container.Register<IHttpHelper, HttpHelper>(Lifestyle.Scoped);
             //container.RegisterConditional(typeof(IRepository<>), typeof(Repository<>), c => !c.Handled);
 
-            container.Register<MongoContext>(Lifestyle.Scoped);
+            container.Register<IMongoContext, MongoContext>(Lifestyle.Scoped);
 
             container.Register<ILanguage, Language>(Lifestyle.Scoped);
             container.Register<IRepository<Language>, LanguageRepository>(Lifestyle.Scoped);
