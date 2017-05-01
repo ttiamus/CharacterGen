@@ -1,6 +1,6 @@
 ﻿namespace CharacterGen.Business.Languages.Queries.GetLanguagesQuery
 {
-    public class GetLanguagesRequest
+    public class GetLanguagesRequest : IRequest
     {
         
     }

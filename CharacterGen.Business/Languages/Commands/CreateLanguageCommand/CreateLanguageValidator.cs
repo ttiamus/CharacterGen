@@ -1,6 +1,6 @@
 ﻿namespace CharacterGen.Business.Languages.Commands.CreateLanguageCommand
 {
-    public class CreateLanguageValidator
+    public class CreateLanguageValidator : IValidator<CreateLanguageRequest>
     {
         public bool IsRequestValid(CreateLanguageRequest request)
         {

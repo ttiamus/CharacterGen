@@ -2,7 +2,7 @@
 
 namespace CharacterGen.Business.Languages.Commands.DeleteLanguageCommand
 {
-    public class DeleteLanguageValidator
+    public class DeleteLanguageValidator : IValidator<DeleteLanguageRequest>
     {
         public bool IsRequestValid(DeleteLanguageRequest request)
         {

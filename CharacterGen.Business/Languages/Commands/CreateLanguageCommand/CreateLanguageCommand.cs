@@ -6,10 +6,10 @@ namespace CharacterGen.Business.Languages.Commands.CreateLanguageCommand
 {
     public class CreateLanguageCommand
     {
-        private readonly CreateLanguageValidator validator;
+        private readonly IValidator<CreateLanguageRequest> validator;
         private readonly IRepository<Language> languageRepository;
 
-        public CreateLanguageCommand(CreateLanguageValidator validator, IRepository<Language> languageRepository)
+        public CreateLanguageCommand(IValidator<CreateLanguageRequest> validator, IRepository<Language> languageRepository)
         {
             this.validator = validator;
             this.languageRepository = languageRepository;

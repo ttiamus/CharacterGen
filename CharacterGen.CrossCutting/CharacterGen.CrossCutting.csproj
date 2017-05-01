@@ -70,6 +70,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CharacterGen.Business\CharacterGen.Business.csproj">
+      <Project>{29B1BFE5-A3F0-4066-ADC0-D6C032CBA788}</Project>
+      <Name>CharacterGen.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CharacterGen.Common\CharacterGen.Common.csproj">
       <Project>{39d33ed4-53a5-49f3-9594-25144bca183c}</Project>
       <Name>CharacterGen.Common</Name>

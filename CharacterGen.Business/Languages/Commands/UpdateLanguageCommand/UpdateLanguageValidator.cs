@@ -3,7 +3,7 @@ using MongoDB.Bson;
 
 namespace CharacterGen.Business.Languages.Commands.UpdateLanguageCommand
 {
-    public class UpdateLanguageValidator
+    public class UpdateLanguageValidator : IValidator<UpdateLanguageRequest>
     {
         public bool IsRequestValid(UpdateLanguageRequest request)
         {

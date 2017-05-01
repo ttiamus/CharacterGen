@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Languages\CreateLanguageTests.cs" />
+    <Compile Include="Languages\CreateLanguageValidatorTests.cs" />
     <Compile Include="MongoContextTestHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

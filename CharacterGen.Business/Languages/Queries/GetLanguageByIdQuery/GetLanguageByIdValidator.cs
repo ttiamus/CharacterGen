@@ -2,7 +2,7 @@
 
 namespace CharacterGen.Business.Languages.Queries.GetLanguageByIdQuery
 {
-    public class GetLanguageByIdValidator
+    public class GetLanguageByIdValidator : IValidator<GetLanguageByIdRequest>
     {
         public bool IsRequestValid(GetLanguageByIdRequest request)
         {

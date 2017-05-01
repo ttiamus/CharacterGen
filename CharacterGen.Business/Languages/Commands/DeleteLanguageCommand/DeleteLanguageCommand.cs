@@ -5,10 +5,10 @@ namespace CharacterGen.Business.Languages.Commands.DeleteLanguageCommand
 {
     public class DeleteLanguageCommand
     {
-        private readonly DeleteLanguageValidator validator;
+        private readonly IValidator<DeleteLanguageRequest> validator;
         private readonly IRepository<Language> languageRepository;
 
-        public DeleteLanguageCommand(DeleteLanguageValidator validator, IRepository<Language> languageRepository)
+        public DeleteLanguageCommand(IValidator<DeleteLanguageRequest> validator, IRepository<Language> languageRepository)
         {
             this.validator = validator;
             this.languageRepository = languageRepository;

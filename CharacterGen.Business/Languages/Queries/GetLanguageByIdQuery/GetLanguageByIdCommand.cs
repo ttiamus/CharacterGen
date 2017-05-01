@@ -6,10 +6,10 @@ namespace CharacterGen.Business.Languages.Queries.GetLanguageByIdQuery
 {
     public class GetLanguageByIdCommand
     {
-        private readonly GetLanguageByIdValidator validator;
+        private readonly IValidator<GetLanguageByIdRequest> validator;
         private readonly IRepository<Language> languageRepository;
 
-        public GetLanguageByIdCommand(GetLanguageByIdValidator validator, IRepository<Language> languageRepository)
+        public GetLanguageByIdCommand(IValidator<GetLanguageByIdRequest> validator, IRepository<Language> languageRepository)
         {
             this.validator = validator;
             this.languageRepository = languageRepository;

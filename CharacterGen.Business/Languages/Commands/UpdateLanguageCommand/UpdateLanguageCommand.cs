@@ -5,10 +5,10 @@ namespace CharacterGen.Business.Languages.Commands.UpdateLanguageCommand
 {
     public class UpdateLanguageCommand
     {
-        private readonly UpdateLanguageValidator validator;
+        private readonly IValidator<UpdateLanguageRequest> validator;
         private readonly IRepository<Language> languageRepository;
 
-        public UpdateLanguageCommand(UpdateLanguageValidator validator, IRepository<Language> languageRepository)
+        public UpdateLanguageCommand(IValidator<UpdateLanguageRequest> validator, IRepository<Language> languageRepository)
         {
             this.validator = validator;
             this.languageRepository = languageRepository;

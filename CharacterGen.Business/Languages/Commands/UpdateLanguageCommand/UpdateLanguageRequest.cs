@@ -2,7 +2,7 @@
 
 namespace CharacterGen.Business.Languages.Commands.UpdateLanguageCommand
 {
-    public class UpdateLanguageRequest
+    public class UpdateLanguageRequest : IRequest
     {
         public string Id {get; set; } 
         public string Name { get; set; }
