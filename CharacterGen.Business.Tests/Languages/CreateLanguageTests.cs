@@ -1,13 +1,19 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using CharacterGen.Business.Languages.Commands.CreateLanguageCommand;
+using CharacterGen.CrossCutting;
 using CharacterGen.Dal.Repositories;
 using CharacterGen.Domain;
 using CharacterGen.Domain.Languages;
 using CharacterGen.Mongo;
+using CharacterGen.Mongo.Models;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MongoDB.Driver;
+using NSubstitute;
 using NUnit.Framework;
+using Assert = NUnit.Framework.Assert;
 
 
 namespace CharacterGen.Business.Tests.Languages
@@ -15,84 +21,62 @@ namespace CharacterGen.Business.Tests.Languages
     [TestFixture]
     public class CreateLanguageTests
     {
+        private CreateLanguageRequest request;
+        private IValidator<CreateLanguageRequest> trueValidator;
+        private IValidator<CreateLanguageRequest> falseValidator;
         private IMongoContext context;
-        private CreateLanguageValidator validator;
         private IRepository<Language> repo;
+        //private int CurrentLanguageCount;
 
         [SetUp]
         public void Setup()
         {
+            AutoMapperConfig.RegisterMappings();
+
+            this.request = new CreateLanguageRequest()
+            {
+                Name = "Name",
+                Description = "Description"
+            };
+
+            this.trueValidator = Substitute.For<IValidator<CreateLanguageRequest>>();
+            trueValidator.IsRequestValid(request).Returns(true);
+
+            this.falseValidator = Substitute.For<IValidator<CreateLanguageRequest>>();
+            falseValidator.IsRequestValid(request).Returns(false);
+
             this.context = new MongoContextTestHelper();
-            this.validator = new CreateLanguageValidator();
             this.repo = new LanguageRepository(context);
+
+            //this.CurrentLanguageCount = context.Collection<Language>().Find(x => true).ToList().Count;
         }
-
+        
         [Test]
-        public void ValidationFailsWithEmptyName()
+        public void LanguageIsCreatedWithTrueValidation()
         {
-            var request = new CreateLanguageRequest()
-            {
-                Name = "",
-                Description = "DescriptionTest"
-            };
+            var command = new CreateLanguageCommand(trueValidator, repo);
 
-            Assert.False(validator.IsRequestValid(request));
-        }
-
-        [Test]
-        public void ValidationFailsWithNullName()
-        {
-            var request = new CreateLanguageRequest()
-            {
-                Name = null,
-                Description = "DescriptionTest"
-            };
-
-            Assert.False(validator.IsRequestValid(request));
-        }
-
-        [Test]
-        public void ValidationFailsWithEmptyDescription()
-        {
-            var request = new CreateLanguageRequest()
-            {
-                Name = "NameTest",
-                Description = ""
-            };
-
-            Assert.False(validator.IsRequestValid(request));
-        }
-
-        [Test]
-        public void ValidationFailsWithNullDescription()
-        {
-            var request = new CreateLanguageRequest()
-            {
-                Name = "NameTest",
-                Description = null
-            };
-
-            Assert.False(validator.IsRequestValid(request));
-        }
-
-        [Test]
-        public void LanguageIsCreatedWithValidRequest()
-        {
-            var command = new CreateLanguageCommand(validator, repo);
-
-            //var currentCount = context.Collection<Language>().Find(x => true).ToList().Count;
-            var currentCount = 1;
-            var request = new CreateLanguageRequest()
-            {
-                Name = $"Name{currentCount}",
-                Description = $"Some Description{currentCount}"
-            };
-
+            var currentCount = context.Collection<LanguageEntity>().AsQueryable().ToList().Count;
+            
             command.Execute(request);
 
-            var countAfterCreation = context.Collection<Language>().Find(x => true).ToList().Count;
+            var countAfterCreation = context.Collection<LanguageEntity>().AsQueryable().ToList().Count;
 
-            Assert.IsTrue(countAfterCreation == context.Collection<Language>().AsQueryable().Count() + 1);
+            Assert.IsTrue(countAfterCreation == currentCount + 1);
+        }
+
+        [Test]
+        public void LanguageIsNotCreatedWithFalseValidation()
+        {
+            var command = new CreateLanguageCommand(falseValidator, repo);
+
+            var currentCount = context.Collection<LanguageEntity>().AsQueryable().ToList().Count;
+
+            Assert.Throws<NotImplementedException>(() => command.Execute(request));
+
+            var countAfterCreation = context.Collection<LanguageEntity>().AsQueryable().ToList().Count;
+
+            Assert.IsTrue(countAfterCreation == currentCount);
         }
     }
 }

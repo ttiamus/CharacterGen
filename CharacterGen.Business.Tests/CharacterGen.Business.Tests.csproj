@@ -85,6 +85,10 @@
       <Project>{29B1BFE5-A3F0-4066-ADC0-D6C032CBA788}</Project>
       <Name>CharacterGen.Business</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CharacterGen.CrossCutting\CharacterGen.CrossCutting.csproj">
+      <Project>{8E13168E-9FCD-49E1-B7D1-B9D36D956DBF}</Project>
+      <Name>CharacterGen.CrossCutting</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CharacterGen.Dal\CharacterGen.Dal.csproj">
       <Project>{2672366C-F7E5-4427-AFC2-4FF21630D6BD}</Project>
       <Name>CharacterGen.Dal</Name>
