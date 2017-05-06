@@ -4,7 +4,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace CharacterGen.Mongo.Models
 {
-    public class BackgroundEntity
+    public class BackgroundEntity : IEntity
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]

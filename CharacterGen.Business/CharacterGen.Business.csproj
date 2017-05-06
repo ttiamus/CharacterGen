@@ -64,7 +64,13 @@
     <Compile Include="Languages\Queries\GetLanguagesQuery\GetLanguagesRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Background\Commands\CreateBackgroundCommand\" />
+    <Folder Include="Background\Commands\DeleteBackgroundCommand\" />
+    <Folder Include="Background\Commands\UpdateBackgroundCommand\" />
+    <Folder Include="Background\Queries\GetBackgroundByIdQuery\" />
+    <Folder Include="Background\Queries\GetBackgroundsQuery\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

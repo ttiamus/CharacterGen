@@ -19,7 +19,7 @@ using Assert = NUnit.Framework.Assert;
 namespace CharacterGen.Business.Tests.Languages
 {
     [TestFixture]
-    public class CreateLanguageTests
+    public class CreateLanguageCommandTests
     {
         private CreateLanguageRequest request;
         private IValidator<CreateLanguageRequest> trueValidator;
