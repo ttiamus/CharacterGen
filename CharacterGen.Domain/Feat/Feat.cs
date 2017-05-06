@@ -6,7 +6,7 @@ namespace CharacterGen.Domain.Feat
 {
     public class Feat : IFeat
     {
-        public ObjectId Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public IEnumerable<string> Benefits { get; set; }

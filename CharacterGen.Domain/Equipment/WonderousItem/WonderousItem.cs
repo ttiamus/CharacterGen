@@ -2,6 +2,6 @@
 {
     public class WonderousItem : IWonderousItem
     {
-        
+        public string Id { get; set; }
     }
 }

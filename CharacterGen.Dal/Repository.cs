@@ -9,7 +9,7 @@ using CharacterGen.Mongo;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
-namespace CharacterGen.Dal.Repositories
+namespace CharacterGen.Dal
 {
     public abstract class Repository<Domain, Entity> : IRepository<Domain> 
         where Domain : class

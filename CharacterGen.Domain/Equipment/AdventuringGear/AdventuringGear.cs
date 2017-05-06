@@ -2,6 +2,6 @@
 {
     public class AdventuringGear : IAdventuringGear
     {
-        
+        public string Id { get; set; }
     }
 }

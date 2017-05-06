@@ -2,6 +2,6 @@
 {
     public class Armor : IArmor
     {
-        
+        public string Id { get; set; }
     }
 }

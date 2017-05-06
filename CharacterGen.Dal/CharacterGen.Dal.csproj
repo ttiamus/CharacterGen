@@ -56,8 +56,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AdventuringGearRepository.cs" />
+    <Compile Include="Repositories\ArmorRepository.cs" />
+    <Compile Include="Repositories\BackgroundRepository.cs" />
+    <Compile Include="Repositories\ClassRepository.cs" />
+    <Compile Include="Repositories\FeatRepository.cs" />
     <Compile Include="Repositories\LanguageRepository.cs" />
-    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\RaceRepository.cs" />
+    <Compile Include="Repositories\SpellRepository.cs" />
+    <Compile Include="Repositories\ToolRepository.cs" />
+    <Compile Include="Repositories\WeaponRepository.cs" />
+    <Compile Include="Repositories\WonderousItemRepository.cs" />
+    <Compile Include="Repository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CharacterGen.Domain\CharacterGen.Domain.csproj">

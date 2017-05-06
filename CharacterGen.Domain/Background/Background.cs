@@ -6,7 +6,7 @@ namespace CharacterGen.Domain.Background
 {
     public class Background : IBackground
     {
-        public ObjectId Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
         public string Feature { get; set; }
         public string AlternateFeature { get; set; }

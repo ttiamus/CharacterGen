@@ -7,7 +7,7 @@ namespace CharacterGen.Domain.Spell
 {
     public class Spell : ISpell
     {
-        public ObjectId Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
         public int Level { get; set; }
         public SpellSchool School { get; set; }
@@ -18,6 +18,7 @@ namespace CharacterGen.Domain.Spell
         public string Range { get; set; }
         public int Cost { get; set; }
         public string Duration { get; set; }
+
         public void UpdateName(string name)
         {
             this.Name = name;
