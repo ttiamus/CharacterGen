@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
 using CharacterGen.Business.Languages.Commands.CreateLanguageCommand;
 using CharacterGen.CrossCutting;
 using CharacterGen.Dal.Repositories;
@@ -9,14 +7,13 @@ using CharacterGen.Domain;
 using CharacterGen.Domain.Languages;
 using CharacterGen.Mongo;
 using CharacterGen.Mongo.Models;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MongoDB.Driver;
 using NSubstitute;
 using NUnit.Framework;
 using Assert = NUnit.Framework.Assert;
 
 
-namespace CharacterGen.Business.Tests.Languages
+namespace CharacterGen.Business.Tests.Languages.CreateLanguage
 {
     [TestFixture]
     public class CreateLanguageCommandTests

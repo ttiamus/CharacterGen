@@ -1,7 +1,7 @@
 ﻿using CharacterGen.Business.Languages.Commands.DeleteLanguageCommand;
 using NUnit.Framework;
 
-namespace CharacterGen.Business.Tests.Languages
+namespace CharacterGen.Business.Tests.Languages.DeleteLanguage
 {
     [TestFixture]
     public class DeleteLanguageValidatorTests

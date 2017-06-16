@@ -1,7 +1,7 @@
 ﻿using CharacterGen.Business.Languages.Commands.CreateLanguageCommand;
 using NUnit.Framework;
 
-namespace CharacterGen.Business.Tests.Languages
+namespace CharacterGen.Business.Tests.Languages.CreateLanguage
 {
     [TestFixture]
     public class CreateLanguageValidatorTests

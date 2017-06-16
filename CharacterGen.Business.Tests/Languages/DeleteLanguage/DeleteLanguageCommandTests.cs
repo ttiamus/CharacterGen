@@ -9,7 +9,7 @@ using MongoDB.Driver;
 using NSubstitute;
 using NUnit.Framework;
 
-namespace CharacterGen.Business.Tests.Languages
+namespace CharacterGen.Business.Tests.Languages.DeleteLanguage
 {
     [TestFixture]
     public class DeleteLanguageCommandTests
@@ -27,11 +27,11 @@ namespace CharacterGen.Business.Tests.Languages
 
             this.context = new MongoContextTestHelper();
             this.repo = new LanguageRepository(context);
-
-            var language = context.Collection<Language>()?.Find(x => true).FirstOrDefault();
-            if(language == null)
-                Assert.Fail("There was not a language in the test database to delete");
-
+            
+            RemoveAllTestLanguages();
+            InsertTestLanguage();
+            var language = context.Collection<LanguageEntity>()?.Find(x => true).FirstOrDefault();
+            
             this.request = new DeleteLanguageRequest()
             {
                 Id = language.Id
@@ -70,6 +70,16 @@ namespace CharacterGen.Business.Tests.Languages
             var countAfterCreation = context.Collection<LanguageEntity>().AsQueryable().ToList().Count;
 
             Assert.IsTrue(countAfterCreation == currentCount - 1);
+        }
+
+        private void InsertTestLanguage()
+        {
+            context.Collection<LanguageEntity>().InsertOne(new LanguageEntity());
+        }
+
+        private void RemoveAllTestLanguages()
+        {
+            context.Collection<LanguageEntity>().DeleteMany(x => true);
         }
     }
 }

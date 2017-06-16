@@ -66,10 +66,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Languages\CreateLanguageCommandTests.cs" />
-    <Compile Include="Languages\CreateLanguageValidatorTests.cs" />
-    <Compile Include="Languages\DeleteLanguageCommandTests.cs" />
-    <Compile Include="Languages\DeleteLanguageValidatorTests.cs" />
+    <Compile Include="Languages\CreateLanguage\CreateLanguageCommandTests.cs" />
+    <Compile Include="Languages\CreateLanguage\CreateLanguageValidatorTests.cs" />
+    <Compile Include="Languages\DeleteLanguage\DeleteLanguageCommandTests.cs" />
+    <Compile Include="Languages\DeleteLanguage\DeleteLanguageValidatorTests.cs" />
+    <Compile Include="Languages\GetLanguageById\GetLanguagesCommandTests.cs" />
+    <Compile Include="Languages\GetLanguages\GetLanguageByIdCommandTests.cs" />
+    <Compile Include="Languages\GetLanguages\GetLanguageByIdValidatorTests.cs" />
+    <Compile Include="Languages\UpdateLanguage\UpdateLanguageCommandTests.cs" />
+    <Compile Include="Languages\UpdateLanguage\UpdateLanguageValidatorTests.cs" />
     <Compile Include="MongoContextTestHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
