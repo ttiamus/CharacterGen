@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\InvalidRequestException.cs" />
+    <Compile Include="Exceptions\ResourceNotFoundException.cs" />
     <Compile Include="Http\HttpHelper.cs" />
     <Compile Include="Http\IHttpHelper.cs" />
     <Compile Include="Json\ObjectIdConverter.cs" />
@@ -54,5 +56,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

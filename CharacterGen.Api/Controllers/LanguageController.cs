@@ -42,6 +42,7 @@ namespace CharacterGen.Api.Controllers
         [Route("language")]
         public IEnumerable<Language> Get(GetLanguagesRequest request)
         {
+            throw new ArgumentException("TestMEssage");
             return getLanguagesCommand.Execute(request);
         }
 

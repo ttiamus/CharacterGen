@@ -1,4 +1,5 @@
 ﻿using System;
+using CharacterGen.Common.Exceptions;
 using CharacterGen.Domain;
 using CharacterGen.Domain.Languages;
 
@@ -19,11 +20,14 @@ namespace CharacterGen.Business.Languages.Queries.GetLanguageByIdQuery
         {
             if (validator.IsRequestValid(request))
             {
-                return languageRepository.Find(request.Id);
+                var language = languageRepository.Find(request.Id);
+                if(language == null)
+                    throw new ResourceNotFoundException($"Language with Id: {request.Id} could not be found");
+                return language;
             }
             else
             {
-                throw new NotImplementedException();
+                throw new ArgumentException("Execute Language request was invalid");
                 //Log problem
             }
         }

@@ -25,7 +25,7 @@ namespace CharacterGen.Dal
         public Domain Find(string id)
         {
             var entity = collection.Find(x => x.Id.Equals(id)).FirstOrDefault();
-            return Mapper.Map<Domain>(entity);
+            return entity == null ? null : Mapper.Map<Domain>(entity);
         }
 
         public IQueryable<Domain> GetAll()
