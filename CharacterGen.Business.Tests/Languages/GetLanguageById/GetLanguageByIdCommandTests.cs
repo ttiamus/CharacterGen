@@ -42,7 +42,7 @@ namespace CharacterGen.Business.Tests.Languages.GetLanguageById
         }
 
         [Test]
-        public void InvalidRequestExceptionIsThrownWhenRequestIsInvalid()
+        public void ArgumentExceptionIsThrownWhenValidatorIsFalse()
         {
             var command = new GetLanguageByIdCommand(falseValidator, repo);
             Assert.Throws<ArgumentException>(delegate { command.Execute(request); });

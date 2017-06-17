@@ -1,4 +1,5 @@
-﻿using CharacterGen.Business.Languages.Commands.DeleteLanguageCommand;
+﻿using System;
+using CharacterGen.Business.Languages.Commands.DeleteLanguageCommand;
 using CharacterGen.CrossCutting;
 using CharacterGen.Dal.Repositories;
 using CharacterGen.Domain;
@@ -51,7 +52,7 @@ namespace CharacterGen.Business.Tests.Languages.DeleteLanguage
 
             var currentCount = context.Collection<LanguageEntity>().AsQueryable().ToList().Count;
 
-            command.Execute(request);
+            Assert.Throws<ArgumentException>(delegate { command.Execute(request); });
 
             var countAfterCreation = context.Collection<LanguageEntity>().AsQueryable().ToList().Count;
 

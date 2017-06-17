@@ -1,4 +1,5 @@
-﻿using CharacterGen.Domain;
+﻿using System;
+using CharacterGen.Domain;
 using CharacterGen.Domain.Languages;
 
 namespace CharacterGen.Business.Languages.Commands.DeleteLanguageCommand
@@ -18,10 +19,12 @@ namespace CharacterGen.Business.Languages.Commands.DeleteLanguageCommand
         {
             if (validator.IsRequestValid(request))
             {
+                //TODO: Verify if this throws an exception if Id can not be found
                 languageRepository.Delete(request.Id);
             }
             else
             {
+                throw new ArgumentException("Delete language request was invalid");
                 //Log problem
             }
         }

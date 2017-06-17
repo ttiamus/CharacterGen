@@ -23,7 +23,6 @@ namespace CharacterGen.Business.Tests.Languages.CreateLanguage
         private IValidator<CreateLanguageRequest> falseValidator;
         private IMongoContext context;
         private IRepository<Language> repo;
-        //private int CurrentLanguageCount;
 
         [SetUp]
         public void Setup()
@@ -63,13 +62,13 @@ namespace CharacterGen.Business.Tests.Languages.CreateLanguage
         }
 
         [Test]
-        public void LanguageIsNotCreatedWithFalseValidation()
+        public void LanguageIsNotCreatedWhenValidatorReturnsFalse()
         {
             var command = new CreateLanguageCommand(falseValidator, repo);
 
             var currentCount = context.Collection<LanguageEntity>().AsQueryable().ToList().Count;
 
-            Assert.Throws<NotImplementedException>(() => command.Execute(request));
+            Assert.Throws<ArgumentException>(() => command.Execute(request));
 
             var countAfterCreation = context.Collection<LanguageEntity>().AsQueryable().ToList().Count;
 

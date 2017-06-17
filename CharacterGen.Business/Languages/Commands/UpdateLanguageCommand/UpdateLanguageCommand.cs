@@ -1,4 +1,6 @@
-﻿using CharacterGen.Domain;
+﻿using System;
+using CharacterGen.Common.Exceptions;
+using CharacterGen.Domain;
 using CharacterGen.Domain.Languages;
 
 namespace CharacterGen.Business.Languages.Commands.UpdateLanguageCommand
@@ -19,6 +21,9 @@ namespace CharacterGen.Business.Languages.Commands.UpdateLanguageCommand
             if (validator.IsRequestValid(request))
             {
                 var language = languageRepository.Find(request.Id);
+                if(language == null)
+                    throw new ResourceNotFoundException($"Language could not be found with Id: {request.Id}");
+
                 language.UpdateName(request.Name);
                 language.UpdateDescription(request.Description);
 
@@ -26,7 +31,7 @@ namespace CharacterGen.Business.Languages.Commands.UpdateLanguageCommand
             }
             else
             {
-                //Log problem
+                throw new ArgumentException("Update language request was invalid");
             }
         }
     }

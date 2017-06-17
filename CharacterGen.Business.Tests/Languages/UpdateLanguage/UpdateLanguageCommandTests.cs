@@ -1,4 +1,6 @@
-﻿using CharacterGen.Business.Languages.Commands.UpdateLanguageCommand;
+﻿using System;
+using CharacterGen.Business.Languages.Commands.UpdateLanguageCommand;
+using CharacterGen.Common.Exceptions;
 using CharacterGen.CrossCutting;
 using CharacterGen.Dal.Repositories;
 using CharacterGen.Domain;
@@ -48,12 +50,29 @@ namespace CharacterGen.Business.Tests.Languages.UpdateLanguage
         }
 
         [Test]
-        public void LanguageIsNotUpdatedWhenValidatorIsFalse()
+        public void LanguageIsNotDeletedWhenValidatorReturnsFalse()
         {
             var command = new UpdateLanguageCommand(falseValidator, repo);
 
             var currentLanguage = context.Collection<LanguageEntity>().Find(x => x.Id.Equals(request.Id)).First();
-            command.Execute(request);
+            Assert.Throws<ArgumentException>(delegate { command.Execute(request); });
+            var languageAfterExecution = context.Collection<LanguageEntity>().Find(x => x.Id.Equals(request.Id)).First();
+
+            Assert.IsTrue(currentLanguage.Name.Equals(languageAfterExecution.Name));
+            Assert.IsTrue(currentLanguage.Description.Equals(languageAfterExecution.Description));
+
+            Assert.IsFalse(request.Name.Equals(languageAfterExecution.Name));
+            Assert.IsFalse(request.Description.Equals(languageAfterExecution.Description));
+        }
+
+        public void ResourceNotFoundExceptionIsThrownWhenRequestedLanguageCanNotBeFoundInDatabase()
+        {
+            RemoveAllTestLanguages();
+
+            var command = new UpdateLanguageCommand(falseValidator, repo);
+
+            var currentLanguage = context.Collection<LanguageEntity>().Find(x => x.Id.Equals(request.Id)).First();
+            Assert.Throws<ResourceNotFoundException>(delegate { command.Execute(request); });
             var languageAfterExecution = context.Collection<LanguageEntity>().Find(x => x.Id.Equals(request.Id)).First();
 
             Assert.IsTrue(currentLanguage.Name.Equals(languageAfterExecution.Name));

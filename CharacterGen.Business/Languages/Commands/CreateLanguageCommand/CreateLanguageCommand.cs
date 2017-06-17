@@ -28,7 +28,7 @@ namespace CharacterGen.Business.Languages.Commands.CreateLanguageCommand
             else
             {
                 //Log problem
-                throw new NotImplementedException();
+                throw new ArgumentException("Create Language Request was invlid");
             }
         }
     }
