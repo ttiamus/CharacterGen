@@ -18,15 +18,15 @@ namespace CharacterGen.Api.Controllers
 {
     public class LanguageController : ApiController
     {
-        private readonly GetLanguagesCommand getLanguagesCommand;
-        private readonly GetLanguageByIdCommand getLanguageByIdCommand;
+        private readonly GetLanguagesQuery getLanguagesCommand;
+        private readonly GetLanguageByIdQuery getLanguageByIdCommand;
         private readonly CreateLanguageCommand createLanguageCommand;
         private readonly UpdateLanguageCommand updateLanguageCommand;
         private readonly DeleteLanguageCommand deleteLanguageCommand;
 
         public LanguageController(
-            GetLanguagesCommand getLanguagesCommand,
-            GetLanguageByIdCommand getLanguageByIdCommand,
+            GetLanguagesQuery getLanguagesCommand,
+            GetLanguageByIdQuery getLanguageByIdCommand,
             CreateLanguageCommand createLanguageCommand,
             UpdateLanguageCommand updateLanguageCommand,
             DeleteLanguageCommand deleteLanguageCommand)

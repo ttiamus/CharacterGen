@@ -34,7 +34,7 @@ namespace CharacterGen.Business.Tests.Languages.GetLanguages
             RemoveAllTestLanguages();
             InsertTestLanguages();
 
-            var command = new GetLanguagesCommand(repo);
+            var command = new GetLanguagesQuery(repo);
             var languages = command.Execute(request).ToList();
             
             Assert.IsTrue(languages.Any());
@@ -47,7 +47,7 @@ namespace CharacterGen.Business.Tests.Languages.GetLanguages
         public void WhenThereAreNoLanguagesAnEmptyListShouldBeReturned()
         {
             RemoveAllTestLanguages();
-            var command = new GetLanguagesCommand(repo);
+            var command = new GetLanguagesQuery(repo);
             var languages = command.Execute(request).ToList();
             Assert.IsFalse(languages == null);
             Assert.IsFalse(languages.Any());

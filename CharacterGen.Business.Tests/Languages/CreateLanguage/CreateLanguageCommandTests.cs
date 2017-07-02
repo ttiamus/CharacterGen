@@ -29,20 +29,20 @@ namespace CharacterGen.Business.Tests.Languages.CreateLanguage
         {
             AutoMapperConfig.RegisterMappings();
 
-            this.request = new CreateLanguageRequest()
+            request = new CreateLanguageRequest()
             {
                 Name = "Name",
                 Description = "Description"
             };
 
-            this.trueValidator = Substitute.For<IValidator<CreateLanguageRequest>>();
+            trueValidator = Substitute.For<IValidator<CreateLanguageRequest>>();
             trueValidator.IsRequestValid(request).Returns(true);
 
-            this.falseValidator = Substitute.For<IValidator<CreateLanguageRequest>>();
+            falseValidator = Substitute.For<IValidator<CreateLanguageRequest>>();
             falseValidator.IsRequestValid(request).Returns(false);
 
-            this.context = new MongoContextTestHelper();
-            this.repo = new LanguageRepository(context);
+            context = new MongoContextTestHelper();
+            repo = new LanguageRepository(context);
 
             //this.CurrentLanguageCount = context.Collection<Language>().Find(x => true).ToList().Count;
         }

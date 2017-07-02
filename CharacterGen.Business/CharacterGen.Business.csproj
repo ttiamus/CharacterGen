@@ -57,19 +57,33 @@
     <Compile Include="Languages\Commands\UpdateLanguageCommand\UpdateLanguageCommand.cs" />
     <Compile Include="Languages\Commands\UpdateLanguageCommand\UpdateLanguageRequest.cs" />
     <Compile Include="Languages\Commands\UpdateLanguageCommand\UpdateLanguageValidator.cs" />
-    <Compile Include="Languages\Queries\GetLanguageByIdQuery\GetLanguageByIdCommand.cs" />
+    <Compile Include="Languages\Queries\GetLanguageByIdQuery\GetLanguageByIdQuery.cs" />
     <Compile Include="Languages\Queries\GetLanguageByIdQuery\GetLanguageByIdRequest.cs" />
     <Compile Include="Languages\Queries\GetLanguageByIdQuery\GetLanguageByIdValidator.cs" />
-    <Compile Include="Languages\Queries\GetLanguagesQuery\GetLanguagesCommand.cs" />
+    <Compile Include="Languages\Queries\GetLanguagesQuery\GetLanguagesQuery.cs" />
     <Compile Include="Languages\Queries\GetLanguagesQuery\GetLanguagesRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Spells\Commands\CreateSpellCommand\CreateSpellCommand.cs" />
+    <Compile Include="Spells\Commands\CreateSpellCommand\CreateSpellRequest.cs" />
+    <Compile Include="Spells\Commands\CreateSpellCommand\CreateSpellValidator.cs" />
+    <Compile Include="Spells\Commands\DeleteSpellCommand\DeleteSpellCommand.cs" />
+    <Compile Include="Spells\Commands\DeleteSpellCommand\DeleteSpellRequest.cs" />
+    <Compile Include="Spells\Commands\DeleteSpellCommand\DeleteSpellValidator.cs" />
+    <Compile Include="Spells\Commands\UpdateSpellCommand\UpdateSpellCommand.cs" />
+    <Compile Include="Spells\Commands\UpdateSpellCommand\UpdateSpellRequest.cs" />
+    <Compile Include="Spells\Commands\UpdateSpellCommand\UpdateSpellValidator.cs" />
+    <Compile Include="Spells\Queries\GetSpellByIdQuery\GetSpellByIdQuery.cs" />
+    <Compile Include="Spells\Queries\GetSpellByIdQuery\GetSpellByIdRequest.cs" />
+    <Compile Include="Spells\Queries\GetSpellByIdQuery\GetSpellByIdValidator.cs" />
+    <Compile Include="Spells\Queries\GetSpellsQuery\GetSpellsQuery.cs" />
+    <Compile Include="Spells\Queries\GetSpellsQuery\GetSpellsRequest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Background\Commands\CreateBackgroundCommand\" />
-    <Folder Include="Background\Commands\DeleteBackgroundCommand\" />
-    <Folder Include="Background\Commands\UpdateBackgroundCommand\" />
-    <Folder Include="Background\Queries\GetBackgroundByIdQuery\" />
-    <Folder Include="Background\Queries\GetBackgroundsQuery\" />
+    <Folder Include="Backgrounds\Commands\CreateBackgroundCommand\" />
+    <Folder Include="Backgrounds\Commands\DeleteBackgroundCommand\" />
+    <Folder Include="Backgrounds\Commands\UpdateBackgroundCommand\" />
+    <Folder Include="Backgrounds\Queries\GetBackgroundByIdQuery\" />
+    <Folder Include="Backgrounds\Queries\GetBackgroundsQuery\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

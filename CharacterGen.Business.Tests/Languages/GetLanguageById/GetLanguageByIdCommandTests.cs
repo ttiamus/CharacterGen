@@ -44,7 +44,7 @@ namespace CharacterGen.Business.Tests.Languages.GetLanguageById
         [Test]
         public void ArgumentExceptionIsThrownWhenValidatorIsFalse()
         {
-            var command = new GetLanguageByIdCommand(falseValidator, repo);
+            var command = new GetLanguageByIdQuery(falseValidator, repo);
             Assert.Throws<ArgumentException>(delegate { command.Execute(request); });
         }
 
@@ -52,14 +52,14 @@ namespace CharacterGen.Business.Tests.Languages.GetLanguageById
         public void ResourceNotFoundExceptionIsThrownWhenLanguageCanNotBeFoundInDatabase()
         {
             RemoveAllTestLanguages();
-            var command = new GetLanguageByIdCommand(trueValidator, repo);
+            var command = new GetLanguageByIdQuery(trueValidator, repo);
             Assert.Throws<ResourceNotFoundException>(delegate { command.Execute(request); });
         }
 
         [Test]
         public void LanguageIsReturnedWhenValidatorIsTrue()
         {
-            var command = new GetLanguageByIdCommand(trueValidator, repo);
+            var command = new GetLanguageByIdQuery(trueValidator, repo);
             var language = command.Execute(request);
             Assert.IsFalse(language == null);
             Assert.IsTrue(language.Name.Equals("TestName"));

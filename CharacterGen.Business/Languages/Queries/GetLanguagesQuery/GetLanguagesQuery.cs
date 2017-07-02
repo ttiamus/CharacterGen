@@ -4,11 +4,11 @@ using CharacterGen.Domain.Languages;
 
 namespace CharacterGen.Business.Languages.Queries.GetLanguagesQuery
 {
-    public class GetLanguagesCommand
+    public class GetLanguagesQuery
     {
         private readonly IRepository<Language> languageRepository;
 
-        public GetLanguagesCommand(IRepository<Language> languageRepository)
+        public GetLanguagesQuery(IRepository<Language> languageRepository)
         {
             this.languageRepository = languageRepository;
         }

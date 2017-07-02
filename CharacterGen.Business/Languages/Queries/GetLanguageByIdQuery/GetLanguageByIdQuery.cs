@@ -5,12 +5,12 @@ using CharacterGen.Domain.Languages;
 
 namespace CharacterGen.Business.Languages.Queries.GetLanguageByIdQuery
 {
-    public class GetLanguageByIdCommand
+    public class GetLanguageByIdQuery
     {
         private readonly IValidator<GetLanguageByIdRequest> validator;
         private readonly IRepository<Language> languageRepository;
 
-        public GetLanguageByIdCommand(IValidator<GetLanguageByIdRequest> validator, IRepository<Language> languageRepository)
+        public GetLanguageByIdQuery(IValidator<GetLanguageByIdRequest> validator, IRepository<Language> languageRepository)
         {
             this.validator = validator;
             this.languageRepository = languageRepository;
